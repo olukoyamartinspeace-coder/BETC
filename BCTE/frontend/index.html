@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCTE | BNB Chain Transparency Engine</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Import Chart.js if needed, but we'll use CSS bars for speed/performance for now -->
+</head>
+
+<body>
+    <header>
+        <div class="logo">BCTE <span class="badge">Alpha</span></div>
+        <button id="connect-wallet">Connect Wallet</button>
+    </header>
+
+    <main>
+        <section id="intent-input">
+            <h1>Pre-Execution Intelligence</h1>
+            <div class="input-group">
+                <select id="token-pair"
+                    style="background: var(--bg-dark); border: 1px solid rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; color: white; outline: none; font-size: 1rem; width: 220px;">
+                    <option value="BNB/USDT">BNB/USDT</option>
+                    <option value="BUSD/USDT">BUSD/USDT</option>
+                    <option value="ETH/BNB">ETH/BNB</option>
+                    <option value="CAKE/BNB">CAKE/BNB</option>
+                </select>
+                <input type="number" placeholder="1000" id="amount" value="10000">
+                <button id="analyze-btn">Analyze Risk</button>
+            </div>
+        </section>
+
+        <section id="dashboard" class="hidden">
+
+            <div class="score-container">
+                <div class="score-label">Execution Safety Score</div>
+                <div id="safety-score-display" class="big-number">--</div>
+                <div id="safety-status" style="color: var(--text-muted)">Generating Proof...</div>
+            </div>
+
+            <div class="grid">
+                <!-- Liquidity Map -->
+                <div class="card">
+                    <h3>Liquidity Map (Depth)</h3>
+                    <div id="liquidity-chart" class="pool-bars">
+                        <!-- Bars injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Analysis Metrics -->
+                <div class="card">
+                    <h3>Pre-Trade Analysis</h3>
+                    <div class="metric-row">
+                        <span>Fragmentation Index</span>
+                        <span id="metric-frag">--</span>
+                    </div>
+                    <div class="metric-row">
+                        <span>True Price (VWAP)</span>
+                        <span id="metric-price">--</span>
+                    </div>
+                    <div class="metric-row">
+                        <span>Exp. Slippage</span>
+                        <span id="metric-slippage">--</span>
+                    </div>
+                    <div class="metric-row">
+                        <span>Route Risk</span>
+                        <span id="metric-risk" style="color: var(--warning)">ANALYZING</span>
+                    </div>
+                </div>
+
+                <!-- MEV Heatmap Placeholder (Day 1) -->
+                <div class="card">
+                    <h3>MEV Sentinel</h3>
+                    <div
+                        style="height: 100px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); border-radius: 8px;">
+                        <span style="color: var(--success); font-weight: bold;">✅ No Sandwiches Detected</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="execute-btn" disabled>Proceed to Execution</button>
+        </section>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
