@@ -1,3 +1,4 @@
+<img width="1920" height="1237" alt="screencapture-127-0-0-1-5500-frontend-index-html-2026-01-31-21_17_39" src="https://github.com/user-attachments/assets/981c7d8b-6ac2-4642-bca2-fe0347532344" />
 # BCTE – BNB Chain Transparency Engine
 
 **Description:**  
